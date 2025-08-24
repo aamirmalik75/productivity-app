@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+.content {
+  display: flex;
+}
+
+html,
+body,
+#root,
+.app,
+.content {
+  height: 100%;
+  width: 100%;
+  font-family: "Roboto", sans-serif;
+}
+
+.app {
+  position: relative;
+}
+
+
+/* Base scrollbar styles */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb-color);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover-color);
+}
+
+/* Light theme scrollbar colors */
+[data-theme='light'] {
+  --scrollbar-track-color: #f1f1f1;
+  --scrollbar-thumb-color: #888;
+  --scrollbar-thumb-hover-color: #555;
+}
+
+/* Dark theme scrollbar colors */
+[data-theme='dark'] {
+  --scrollbar-track-color: #333;
+  --scrollbar-thumb-color: #555;
+  --scrollbar-thumb-hover-color: #888;
+}
+
+/* white: {
+  100: "#fcfcfc",
+  200: "#f9f9f9",
+  300: "#f7f7f7",
+  400: "#f4f4f4",
+  500: "#f1f1f1",
+  600: "#c1c1c1",
+  700: "#919191",
+  800: "#606060",
+  900: "#303030"
+}, */
+

@@ -1,0 +1,49 @@
+:root {
+  --fc-list-event-hover-bg-color: #666666;
+}
+
+
+.fc .fc-timegrid-slot {
+  height: 40px;
+  /*This will change the actual timeslot height*/
+}
+
+.fc-event.fc-event-start.fc-event-end.fc-event-past.fc-list-event:hover {
+  background-color: aqua !important;
+}
+
+.fc-theme-standard .fc-popover {
+  height: 200px;
+  background-color: #000;
+  color: #fff;
+  overflow: auto;
+}
+
+.fc-theme-standard .fc-list-day-cushion {
+  background-color: #fff;
+  color: #000;
+}
+
+@media (max-width:600px) {
+  .fc-header-toolbar.fc-toolbar.fc-toolbar-ltr {
+    width: 100% !important;
+    display: grid !important;
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  .fc-toolbar-chunk:nth-child(1) {
+    grid-column-start: 1;
+    grid-column-end: 8;
+    display: inline-block !important;
+  }
+  .fc-toolbar-chunk:nth-child(2) {
+    grid-column-start: 9;
+    grid-column-end: 12;
+    display: inline-block !important;
+  }
+  .fc-toolbar-chunk:nth-child(3) {
+    grid-column-start: 1;
+    grid-column-end: 13;
+  }
+
+}
