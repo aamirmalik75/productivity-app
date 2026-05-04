@@ -15,8 +15,8 @@ const CustomCard = ({ idea, setOpen, setDeletingIdeaId, setFullfilledIdeaId }) =
   const colors = tokens(theme.palette.mode, theme.palette.variantColor);
   const cardTheme = {
     background: idea.category === 'Professional' ? '#121212' : '#ffffff',
-    color: idea.category === 'Professional' ? '#ffffff' : '#121212',
-    descColor: idea.category === 'Professional' ? colors.grey[200] : colors.grey[900]
+    color: colors.primary[500],
+    descColor: idea.category === 'Professional' ? '#ffffff' : '#121212'
   };
 
   return (
@@ -47,7 +47,7 @@ const CustomCard = ({ idea, setOpen, setDeletingIdeaId, setFullfilledIdeaId }) =
         </div>
       </CardActions>
       <CardContent sx={{ p: '5px' }}>
-        <Typography gutterBottom variant="h4" component="div">
+        <Typography gutterBottom variant="h3" component="div" style={{fontWeight: 500}}>
           {idea.title}
         </Typography>
         <Typography variant="h5" color={cardTheme.descColor}>

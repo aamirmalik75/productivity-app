@@ -157,7 +157,7 @@ const Ideas = ({ setActive }) => {
           <Box sx={{ border: order === 'Personal' ? customBorder.border : null, background: '#ffffff', width: isNonMobileScreen && isNonMediumScreen ? '30px' : '15px', height: isNonMobileScreen && isNonMediumScreen ? '30px' : '15px', borderRadius: '50%', mr: '5px', cursor: 'pointer' }} onClick={() => setOrder("Personal")}></Box>
           <Typography sx={{ color: 'red', mr: '10px', fontWeight: '600' }} variant='h6' >Personal</Typography>
         </Box >
-        <Button sx={{ gridColumn: isNonMobileScreen ? undefined : 'span 2' }} variant='contained' onClick={() => navigate('/idea/create')} >Create New Idea</Button>
+        <Button sx={{ gridColumn: isNonMobileScreen ? undefined : 'span 2' }} variant='contained' onClick={() => navigate('/idea/create')} style={{backgroundColor: colors.primary[800], color: colors.primary[100]}} >Create New Idea</Button>
       </Box >
       <Box display='grid' gridTemplateColumns={(!isNonMobileScreen && !isNonMediumScreen ? 'repeat(1,1fr)' : '') || (isNonMediumScreen && isNonMobileScreen ? 'repeat(3,1fr)' : 'repeat(2,1fr)')} gap='10px' >
         {ideas?.map((idea) => (

@@ -10,7 +10,7 @@ A simple yet powerful productivity app to help users manage tasks, set goals & d
 </div>
 
 ## Preview
-![App Screenshot]()
+![App Screenshot](resources/imgs/main.png)
 
 
 ## 🚀 Features
