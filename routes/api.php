@@ -12,6 +12,7 @@ use App\Http\Controllers\api\ProjectController;
 use App\Http\Controllers\api\TaskController;
 use App\Models\schedule;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Carbon;
@@ -29,6 +30,29 @@ use Illuminate\Support\Carbon;
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
   return $request->user();
+});
+
+Route::middleware('auth:sanctum')->get('/system/health', function () {
+  $user_id = auth()->id();
+
+  $recent_logs = DB::table('system_telemetry')
+    ->where('user_id', $user_id)
+    ->orderBy('created_at', 'desc')
+    ->limit(10)
+    ->get()
+    ->reverse()
+    ->values();
+
+  $avg_execution_time = DB::table('system_telemetry')->where('user_id', $user_id)->avg('execuation_time_ms');
+
+  $total_requests = DB::table('system_telemetry')->where('user_id', $user_id)->count();
+
+  return response()->json([
+    'chart_data' => $recent_logs,
+    'total_requests' => $total_requests,
+    'average_time_ms' => round($avg_execution_time, 2)
+  ]);
+
 });
 
 Route::group(['prefix' => 'auth'], function () {

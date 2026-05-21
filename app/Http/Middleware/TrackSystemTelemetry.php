@@ -25,6 +25,7 @@ class TrackSystemTelemetry
 
     try {
       DB::table('system_telemetry')->insert([
+        'user_id' => auth()->id(),
         'api_route' => $request->path(),
         'execuation_time_ms' => $execution_time,
         'http_status' => $response->getStatusCode(),
